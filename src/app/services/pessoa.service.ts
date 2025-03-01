@@ -7,13 +7,14 @@ import { Pessoa } from '../models/pessoa.model';
   providedIn: 'root'
 })
 export class PessoaService {
-  private apiUrl = 'http://localhost:8080/pessoas'; // Ajuste conforme necessário
+  private apiUrl = 'http://localhost:8080/api/pessoas'; // Ajuste conforme necessário
 
   constructor(private http: HttpClient) {}
 
   listarPessoas(): Observable<Pessoa[]> {
     return this.http.get<Pessoa[]>(this.apiUrl);
   }
+
 
   cadastrarPessoa(pessoa: Pessoa): Observable<Pessoa> {
     return this.http.post<Pessoa>(this.apiUrl, pessoa);

@@ -1,0 +1,23 @@
+<div class="card">
+  <img *ngIf="pessoa.contatos.length > 0; else semImagem"
+       [src]="pessoa.contatos[0]"
+       class="card-img-top bg-white"
+       alt="Imagem do contato">
+
+  <ng-template #semImagem>
+    <img src="assets/placeholder.jpg" class="card-img-top bg-white" alt="Imagem padrão">
+  </ng-template>
+
+  <div class="card-body">
+    <a [routerLink]="['/editar-produto', pessoa.id]">
+      <h5 class="card-title">{{ pessoa.nome | uppercase }}</h5>
+    </a>
+    <p class="card-text">{{ pessoa.endereco }}</p>
+    <a class="btn btn-primary" (click)="editarContato()">Contato</a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Cidade: {{ pessoa.cidade }}</li>
+    <li class="list-group-item">UF: {{ pessoa.uf }}</li>
+  </ul>
+</div>

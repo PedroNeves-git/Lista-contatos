@@ -5,6 +5,5 @@ export interface Pessoa {
   endereco: string;
   cidade: string;
   uf: string;
-  ativo: boolean;
-  contatos: string[];
+  contatos: string[]; // Pode conter URLs de imagens de contatos
 }

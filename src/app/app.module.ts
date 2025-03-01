@@ -1,26 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module'; // Adicione essa linha
 import { ReactiveFormsModule } from '@angular/forms';
-import { CadastroPessoaComponent } from './pages/cadastro-pessoa/cadastro-pessoa.component';
-import { ListagemPessoasComponent } from './pages/listagem-pessoas/listagem-pessoas.component';
-
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { PessoaService } from './services/pessoa.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroPessoaComponent,
-    ListagemPessoasComponent
+    FooterComponent,
+    HeaderComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([]),
     AppRoutingModule,
-    ReactiveFormsModule // Se já houver rotas configuradas, mantenha-as aqui
+    ReactiveFormsModule,
+    HttpClientModule // Se já houver rotas configuradas, mantenha-as aqui
   ],
-  providers: [],
+  providers: [PessoaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

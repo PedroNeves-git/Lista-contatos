@@ -1,1 +1,23 @@
-<router-outlet></router-outlet>
+<div class="container">
+  <app-header></app-header>
+
+  <div class="p-5 mt-3 text-center bg-body-tertiary rounded-3">
+    <h1 class="text-body-emphasis">Lista de Contatos</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+      Realize o cadastro de seus contatos
+    </p>
+    <div class="d-inline-flex gap-2">
+      <a class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" routerLink="/">
+        <i class="fa fa-plus-circle me-2" aria-hidden="true"></i> Adicionar Pessoas
+      </a>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-4 mb-3" *ngFor="let pessoa of pessoas">
+      <app-card [pessoa]="pessoa"></app-card>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>
