@@ -13,11 +13,12 @@
       <h5 class="card-title">{{ pessoa.nome | uppercase }}</h5>
     </a>
     <p class="card-text">{{ pessoa.endereco }}</p>
-    <a class="btn btn-primary" (click)="editarContato()">Contato</a>
+    <a class="btn btn-primary" (click)="editarContato()">Editar Contato</a>
   </div>
 
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Cidade: {{ pessoa.cidade }}</li>
     <li class="list-group-item">UF: {{ pessoa.uf }}</li>
+    <li class="list-group-item">CEP: {{ pessoa.cep }}</li> <!-- Adicionado o CEP -->
   </ul>
 </div>

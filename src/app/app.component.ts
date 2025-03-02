@@ -9,16 +9,18 @@ import { Pessoa } from './models/pessoa.model';
 })
 export class AppComponent implements OnInit {
   title = 'lista-contatos';
-  pessoas: Pessoa[] = []; // Define explicitamente o tipo como Pessoa[]
+  pessoas: Pessoa[] = []; // Array de pessoas para exibição no template
 
   constructor(private pessoaService: PessoaService) {}
 
   ngOnInit(): void {
     this.pessoaService.listarPessoas().subscribe({
-
       next: (dados) => {
         console.log("Dados recebidos da API:", dados);
-        this.pessoas = dados || []; // Garante que não seja undefined
+        this.pessoas = dados.map(pessoa => ({
+          ...pessoa,
+          contatos: pessoa.contatos || []  // Garante que contatos seja um array vazio se não existir
+        }));
       },
       error: (erro) => {
         console.error("Erro ao buscar pessoas", erro);
@@ -26,4 +28,5 @@ export class AppComponent implements OnInit {
       }
     });
   }
+  
 }

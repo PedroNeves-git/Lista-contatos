@@ -7,15 +7,15 @@
       Realize o cadastro de seus contatos
     </p>
     <div class="d-inline-flex gap-2">
-      <a class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" routerLink="/">
-        <i class="fa fa-plus-circle me-2" aria-hidden="true"></i> Adicionar Pessoas
+      <a class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" routerLink="/adicionar-pessoa">
+        <i class="fa fa-plus-circle me-2" aria-hidden="true"></i> Adicionar Pessoa
       </a>
     </div>
   </div>
 
   <div class="row mt-4">
     <div class="col-md-4 mb-3" *ngFor="let pessoa of pessoas">
-      <app-card [pessoa]="pessoa"></app-card>
+      <app-card [pessoa]="pessoa"></app-card> <!-- Exibe cada pessoa em um card -->
     </div>
   </div>
 
