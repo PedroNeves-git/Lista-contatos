@@ -10,6 +10,7 @@ import { Pessoa } from './models/pessoa.model';
 export class AppComponent implements OnInit {
   title = 'lista-contatos';
   pessoas: Pessoa[] = []; // Array de pessoas para exibição no template
+  isHomePage = true;
 
   constructor(private pessoaService: PessoaService) {}
 
@@ -28,5 +29,5 @@ export class AppComponent implements OnInit {
       }
     });
   }
-  
+
 }

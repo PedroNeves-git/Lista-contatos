@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdicionarPessoaComponent } from './adicionar-pessoa.component';
+import { CadastrarEditarPessoaComponent } from './cadastrar-editar-pessoa.component';
 
-describe('AdicionarPessoaComponent', () => {
-  let component: AdicionarPessoaComponent;
-  let fixture: ComponentFixture<AdicionarPessoaComponent>;
+describe('CadastrarEditarPessoaComponent', () => {
+  let component: CadastrarEditarPessoaComponent;
+  let fixture: ComponentFixture<CadastrarEditarPessoaComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AdicionarPessoaComponent]
+      declarations: [CadastrarEditarPessoaComponent]
     });
-    fixture = TestBed.createComponent(AdicionarPessoaComponent);
+    fixture = TestBed.createComponent(CadastrarEditarPessoaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

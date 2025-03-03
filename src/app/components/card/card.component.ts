@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router'; // Importe o Router
 import { Pessoa } from 'src/app/models/pessoa.model';
 
 @Component({
@@ -9,7 +10,10 @@ import { Pessoa } from 'src/app/models/pessoa.model';
 export class CardComponent {
   @Input() pessoa: any;
 
+  constructor(private router: Router) {}
+
   editarContato() {
-    console.log('Editar contato:', this.pessoa.nome);
+    // Redireciona para a página de edição de pessoa, passando o id da pessoa
+    this.router.navigate(['/editar-pessoa', this.pessoa.id]);
   }
 }

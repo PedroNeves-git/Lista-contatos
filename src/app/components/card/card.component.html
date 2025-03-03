@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card custom-card">
   <img *ngIf="pessoa.contatos.length > 0; else semImagem"
        [src]="pessoa.contatos[0]"
        class="card-img-top bg-white"
@@ -19,6 +19,6 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Cidade: {{ pessoa.cidade }}</li>
     <li class="list-group-item">UF: {{ pessoa.uf }}</li>
-    <li class="list-group-item">CEP: {{ pessoa.cep }}</li> <!-- Adicionado o CEP -->
+    <li class="list-group-item">CEP: {{ pessoa.cep }}</li>
   </ul>
 </div>

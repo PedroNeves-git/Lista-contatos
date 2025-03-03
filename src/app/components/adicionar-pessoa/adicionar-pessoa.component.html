@@ -1,1 +1,162 @@
-<p>adicionar-pessoa works!</p>
+<form
+  [formGroup]="formCadastro"
+  (submit)="id ? atualizarCadastro() : registrarUsuario()"
+  class="bg-body-secondary rounded-3 p-3"
+>
+  <div class="row g-3">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Campo</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Nome -->
+        <tr>
+          <td><label class="form-label fw-bold">Nome</label></td>
+          <td>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="nome"
+              placeholder="Ex: seu nome"
+              [class.is-invalid]="
+                formCadastro.get('nome')?.invalid &&
+                formCadastro.get('nome')?.touched
+              "
+            />
+            <div
+              *ngIf="
+                formCadastro.get('nome')?.invalid &&
+                formCadastro.get('nome')?.touched
+              "
+              class="invalid-feedback"
+            >
+              <span *ngIf="formCadastro.get('nome')?.hasError('required')">
+                Campo obrigatório Preenchimento
+              </span>
+              <span *ngIf="formCadastro.get('nome')?.hasError('minlength')">
+                Mínimo 2 caracteres
+              </span>
+              <span *ngIf="formCadastro.get('nome')?.hasError('maxlength')">
+                Máximo 100 caracteres
+              </span>
+            </div>
+          </td>
+        </tr>
+
+        <!-- CEP -->
+        <tr>
+          <td><label class="form-label fw-bold">CEP</label></td>
+          <td>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="cep"
+              placeholder="12345678"
+              [class.is-invalid]="
+                formCadastro.get('cep')?.invalid &&
+                formCadastro.get('cep')?.touched
+              "
+              (blur)="buscarEndereco()"
+              (keydown.enter)="$event.preventDefault()"
+            />
+            <div
+              *ngIf="
+                formCadastro.get('cep')?.invalid &&
+                formCadastro.get('cep')?.touched
+              "
+              class="invalid-feedback"
+            >
+              Formato/CEP inválido (8 dígitos)
+            </div>
+          </td>
+        </tr>
+
+        <!-- UF -->
+        <tr>
+          <td><label class="form-label fw-bold">UF</label></td>
+          <td>
+            <select
+              class="form-select"
+              formControlName="uf"
+              [class.is-invalid]="
+                formCadastro.get('uf')?.invalid &&
+                formCadastro.get('uf')?.touched
+              "
+            >
+              <option [ngValue]="null" selected></option>
+              <option *ngFor="let uf of ufLista" [value]="uf">
+                {{ uf }}
+              </option>
+            </select>
+          </td>
+        </tr>
+
+        <!-- Endereço -->
+        <tr>
+          <td><label class="form-label fw-bold">Endereço</label></td>
+          <td>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="endereco"
+              placeholder="Ex: rua tal, 0101"
+            />
+          </td>
+        </tr>
+
+        <!-- Cidade -->
+        <tr>
+          <td><label class="form-label fw-bold">Cidade</label></td>
+          <td>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="cidade"
+              placeholder="Ex: sua cidade"
+            />
+          </td>
+        </tr>
+
+        <!-- Botão -->
+        <tr>
+          <td colspan="2" class="text-center">
+            <button
+              type="submit"
+              class="btn btn-primary w-100 py-2"
+              [disabled]="!formCadastro.valid"
+            >
+              {{ id ? "Editar" : "Cadastrar" }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>
+
+<!-- Bootstrap Modal -->
+<div
+  class="modal fade"
+  id="meuModal"
+  tabindex="-1"
+  aria-labelledby="modalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Mensagem</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body text-center">
+        {{ mensagemModal }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>

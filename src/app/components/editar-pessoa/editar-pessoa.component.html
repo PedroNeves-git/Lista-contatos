@@ -1,1 +1,126 @@
-<p>editar-pessoa works!</p>
+<form
+  [formGroup]="formCadastro"
+  (submit)="id ? atualizarCadastro() : atualizarCadastro()"
+  class="bg-body-secondary rounded-3 p-3"
+>
+  <div class="row g-3">
+    <!-- nome -->
+    <div>
+      <label class="form-label fw-bold">Nome</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="nome"
+        placeholder="Ex: João Silva"
+        [class.is-invalid]="
+          formCadastro.get('nome')?.invalid &&
+          formCadastro.get('nome')?.touched
+        "
+      />
+      <div
+        *ngIf="formCadastro.get('nome')?.invalid && formCadastro.get('nome')?.touched"
+        class="invalid-feedback"
+      >
+        <span *ngIf="formCadastro.get('nome')?.hasError('required')">Campo obrigatório</span>
+        <span *ngIf="formCadastro.get('nome')?.hasError('minlength')">Mínimo 2 caracteres</span>
+        <span *ngIf="formCadastro.get('nome')?.hasError('maxlength')">Máximo 100 caracteres</span>
+      </div>
+    </div>
+
+    <!-- CEP -->
+    <div class="col-md-6">
+      <label class="form-label fw-bold">CEP</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="cep"
+        placeholder="12345678"
+        [class.is-invalid]="
+          formCadastro.get('cep')?.invalid &&
+          formCadastro.get('cep')?.touched
+        "
+        (blur)="buscarEndereco()"
+        (keydown.enter)="$event.preventDefault()"
+      />
+      <div
+        *ngIf="formCadastro.get('cep')?.invalid && formCadastro.get('cep')?.touched"
+        class="invalid-feedback"
+      >
+        Formato/CEP inválido (8 dígitos)
+      </div>
+    </div>
+
+    <!-- UF -->
+    <div class="col-md-6">
+      <label class="form-label fw-bold">UF</label>
+      <select
+        class="form-select"
+        formControlName="uf"
+        [class.is-invalid]="
+          formCadastro.get('uf')?.invalid &&
+          formCadastro.get('uf')?.touched
+        "
+      >
+        <option [ngValue]="null" selected></option>
+        <option *ngFor="let uf of ufLista" [value]="uf">
+          {{ uf }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Endereço -->
+    <div>
+      <label class="form-label fw-bold">Endereço</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="endereco"
+        placeholder="Ex: Avenida Paulista, 123"
+        [class.is-invalid]="
+          formCadastro.get('endereco')?.invalid &&
+          formCadastro.get('endereco')?.touched
+        "
+      />
+      <div
+        *ngIf="formCadastro.get('endereco')?.invalid && formCadastro.get('endereco')?.touched"
+        class="invalid-feedback"
+      >
+        <span *ngIf="formCadastro.get('endereco')?.hasError('minlength')">Mínimo 3 caracteres</span>
+        <span *ngIf="formCadastro.get('endereco')?.hasError('maxlength')">Máximo 150 caracteres</span>
+      </div>
+    </div>
+
+    <!-- Cidade -->
+    <div>
+      <label class="form-label fw-bold">Cidade</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="cidade"
+        placeholder="Ex: São Paulo"
+        [class.is-invalid]="
+          formCadastro.get('cidade')?.invalid &&
+          formCadastro.get('cidade')?.touched
+        "
+      />
+      <div
+        *ngIf="formCadastro.get('cidade')?.invalid && formCadastro.get('cidade')?.touched"
+        class="invalid-feedback"
+      >
+        <span *ngIf="formCadastro.get('cidade')?.hasError('minlength')">Mínimo 3 caracteres</span>
+        <span *ngIf="formCadastro.get('cidade')?.hasError('maxlength')">Máximo 100 caracteres</span>
+      </div>
+    </div>
+
+    <!-- Botão -->
+    <div class="mt-4">
+      <button
+        type="submit"
+        class="btn btn-primary mx-auto w-100 py-2"
+        [disabled]="!formCadastro.valid"
+      >
+        {{ id ? 'Editar' : 'Cadastrar' }}
+      </button>
+    </div>
+  </div>
+</form>
