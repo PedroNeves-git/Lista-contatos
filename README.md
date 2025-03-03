@@ -47,7 +47,7 @@ Recomendados:
 
 ### **1️⃣ Clonar o projeto**
 ```bash
-git clone https://github.com/PedroNeves-git/controle-contatos-frontend.git
+git clone https://github.com/PedroNeves-git/Lista-contatos.git
 ```
 
 ### **2️⃣ Acessar o diretório**
