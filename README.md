@@ -1,79 +1,90 @@
-Controle de Contatos - Frontend (Angular)
+📌 Controle de Contatos - Frontend
 
-Esse projeto foi desenvolvido para consumir a API de gerenciamento de contatos, utilizando Angular para a construção do frontend. O objetivo principal é possibilitar o cadastro, edição, visualização e exclusão de pessoas e seus respectivos contatos.
+Este repositório contém o frontend do projeto Controle de Contatos, desenvolvido em Angular 16 para consumir a API em Spring Boot. O objetivo do projeto é gerenciar um cadastro de pessoas e seus respectivos meios de contato, fornecendo uma interface amigável para os usuários.
 
 🛠 Tecnologias Utilizadas
 
-Angular 16 → Framework principal para construção da interface.
+Angular 16 → Framework principal para o frontend.
 
-TypeScript → Linguagem utilizada para desenvolvimento do projeto.
+TypeScript → Linguagem utilizada no desenvolvimento.
 
-Bootstrap → Framework CSS para estilização e responsividade.
+Bootstrap → Biblioteca de estilos para responsividade e componentes visuais.
 
-RxJS → Biblioteca para programação reativa e manipulação de streams de dados.
+RxJS → Biblioteca para programação reativa e manipulação de dados assíncronos.
 
-Angular CLI → Ferramenta para gerenciamento do projeto Angular.
-
-Node.js & npm → Ambiente necessário para rodar o Angular e gerenciar pacotes.
+Angular CLI → Ferramenta para gerenciamento e execução do projeto.
 
 💻 Como Executar o Projeto
 
 📌 Pré-requisitos
 
-Recomendados:
+Requisitos para rodar o projeto localmente:
 
-Node.js (LTS) e npm
+Node.js 18+
 
-Um editor de código (VS Code, WebStorm, etc.)
+Angular CLI 16+
 
-Angular CLI instalado globalmente:
+Um editor de código (VSCode, WebStorm, etc.)
 
-  npm install -g @angular/cli
+📥 Instalação e Execução
 
-Passos para execução
+Clone o projeto
 
-1️⃣ Clone o projeto
+  git clone https://github.com/PedroNeves-git/controle-contatos-angular.git
 
-  git clone https://github.com/PedroNeves-git/controle-contatos-frontend.git
+Entre no diretório do projeto
 
-2️⃣ Entre no diretório do projeto
+  cd controle-contatos-angular
 
-  cd controle-contatos-frontend
-
-3️⃣ Instale as dependências do projeto
+Instale as dependências
 
   npm install
 
-4️⃣ Inicie a aplicação
+Execute o projeto
 
   ng serve
 
-5️⃣ Acesse o sistema pelo navegador
+Acesse no navegador:
 
   http://localhost:4200
 
-📌 Configuração da API
+📌 Configuração de Ambiente
 
-Para que o frontend funcione corretamente, a API em Spring Boot precisa estar rodando localmente na porta 8080.
+Caso precise configurar a API base, altere o arquivo environment.ts localizado em:
 
-Endpoints da API:
+  src/environments/environment.ts
 
-API Base URL: http://localhost:8080
+Exemplo:
 
-Endpoint principal: http://localhost:8080/api/pessoas
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8080/api'
+};
 
-Se necessário, edite a URL da API no arquivo:
+Para ambiente de produção, ajuste o arquivo environment.prod.ts.
 
-src/environments/environment.ts
+📌 Funcionalidades Principais
 
-📌 Funcionalidades
+✅ Listagem de contatos cadastrados.✅ Cadastro de novos contatos.✅ Atualização de informações do contato.✅ Exclusão de contatos.✅ Validação de formulários.✅ Comunicação com a API em Spring Boot.
 
-✔️ Listagem de contatos cadastrados.
-✔️ Cadastro de novos contatos.
-✔️ Edição de informações de um contato existente.
-✔️ Exclusão de contatos.
-✔️ Busca de endereços via CEP (integração com a API ViaCEP).
+📌 Contribuições
 
-Sinta-se à vontade para contribuir! 🚀
+Sinta-se à vontade para contribuir com melhorias para o projeto. Basta:
 
-👨‍💻 Desenvolvido por Pedro Neves
+Fazer um fork do repositório.
+
+Criar uma branch com a nova feature ou correção:
+
+git checkout -b minha-feature
+
+Fazer o commit das alterações:
+
+git commit -m "Minha nova feature"
+
+Enviar as alterações para o repositório remoto:
+
+git push origin minha-feature
+
+Abrir um pull request.
+
+👨‍💻 Desenvolvido por Pedro Neves 🚀
