@@ -1,90 +1,92 @@
-📌 Controle de Contatos - Frontend
+<div align="center">
+<img src="https://png.pngtree.com/png-vector/20220616/ourmid/pngtree-people-contact-logo-vector-icon-png-image_5111734.png"/>
+</div>
 
-Este repositório contém o frontend do projeto Controle de Contatos, desenvolvido em Angular 16 para consumir a API em Spring Boot. O objetivo do projeto é gerenciar um cadastro de pessoas e seus respectivos meios de contato, fornecendo uma interface amigável para os usuários.
+###
 
-🛠 Tecnologias Utilizadas
+<div align="center">
+  <a href="https://www.linkedin.com/in/pedro-neves-867001258/" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="linkedin logo"  />
+  </a>
+</div>
 
-Angular 16 → Framework principal para o frontend.
+###
 
-TypeScript → Linguagem utilizada no desenvolvimento.
+# Lista de Contatos (Frontend - Angular)
 
-Bootstrap → Biblioteca de estilos para responsividade e componentes visuais.
+Esse projeto foi desenvolvido como parte do sistema de gerenciamento de contatos, utilizando Angular para a construção da interface gráfica e integração com a API desenvolvida em Spring Boot.
 
-RxJS → Biblioteca para programação reativa e manipulação de dados assíncronos.
+<div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" height="40" alt="angular logo" />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" alt="typescript logo" />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" alt="bootstrap logo" />
+</div>
 
-Angular CLI → Ferramenta para gerenciamento e execução do projeto.
+## 🛠 Tecnologias Utilizadas:
 
-💻 Como Executar o Projeto
+- **Angular 16** → Framework principal do frontend.
+- **TypeScript** → Linguagem utilizada para desenvolvimento.
+- **Bootstrap** → Biblioteca para estilização e responsividade.
+- **RxJS** → Gerenciamento de estados e programação reativa.
+- **Angular Material** → Componentes visuais adicionais.
+- **Axios/HttpClient** → Consumo da API backend.
 
-📌 Pré-requisitos
+---
 
-Requisitos para rodar o projeto localmente:
+## 💻 Como Executar o Projeto  
 
-Node.js 18+
+### **📌 Pré-requisitos** 
 
-Angular CLI 16+
+Recomendados:
+- [Node.js](https://nodejs.org/en/download/) (versão LTS)
+- [Angular CLI](https://angular.io/cli)
+- Um editor de código (VSCode recomendado)
+- A API backend em Spring Boot rodando localmente
 
-Um editor de código (VSCode, WebStorm, etc.)
+### **1️⃣ Clonar o projeto**
+```bash
+git clone https://github.com/PedroNeves-git/controle-contatos-frontend.git
+```
 
-📥 Instalação e Execução
+### **2️⃣ Acessar o diretório**
+```bash
+cd controle-contatos-frontend
+```
 
-Clone o projeto
+### **3️⃣ Instalar as dependências**
+```bash
+npm install
+```
 
-  git clone https://github.com/PedroNeves-git/controle-contatos-angular.git
+### **4️⃣ Iniciar a aplicação**
+```bash
+ng serve
+```
+A aplicação estará disponível em:
 
-Entre no diretório do projeto
+```bash
+http://localhost:4200
+```
 
-  cd controle-contatos-angular
+### 📌 Configuração da API Backend
+Para que o frontend funcione corretamente, a API deve estar rodando em:
 
-Instale as dependências
+```bash
+http://localhost:8080/api
+```
+Certifique-se de que o backend está rodando antes de iniciar o Angular.
 
-  npm install
+### 📌 Funcionalidades
+✅ Listagem de contatos
+✅ Cadastro de novos contatos
+✅ Atualização de informações
+✅ Exclusão de contatos
+✅ Validação de formulários
+✅ Consumo de API REST
 
-Execute o projeto
+### 🚀 Contribuindo
+Sinta-se à vontade para abrir issues e pull requests!
 
-  ng serve
-
-Acesse no navegador:
-
-  http://localhost:4200
-
-📌 Configuração de Ambiente
-
-Caso precise configurar a API base, altere o arquivo environment.ts localizado em:
-
-  src/environments/environment.ts
-
-Exemplo:
-
-export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:8080/api'
-};
-
-Para ambiente de produção, ajuste o arquivo environment.prod.ts.
-
-📌 Funcionalidades Principais
-
-✅ Listagem de contatos cadastrados.✅ Cadastro de novos contatos.✅ Atualização de informações do contato.✅ Exclusão de contatos.✅ Validação de formulários.✅ Comunicação com a API em Spring Boot.
-
-📌 Contribuições
-
-Sinta-se à vontade para contribuir com melhorias para o projeto. Basta:
-
-Fazer um fork do repositório.
-
-Criar uma branch com a nova feature ou correção:
-
-git checkout -b minha-feature
-
-Fazer o commit das alterações:
-
-git commit -m "Minha nova feature"
-
-Enviar as alterações para o repositório remoto:
-
-git push origin minha-feature
-
-Abrir um pull request.
-
-👨‍💻 Desenvolvido por Pedro Neves 🚀
+👨‍💻 Desenvolvido por Pedro Neves
