@@ -1,27 +1,79 @@
-# ControleContatos
+Controle de Contatos - Frontend (Angular)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Esse projeto foi desenvolvido para consumir a API de gerenciamento de contatos, utilizando Angular para a construção do frontend. O objetivo principal é possibilitar o cadastro, edição, visualização e exclusão de pessoas e seus respectivos contatos.
 
-## Development server
+🛠 Tecnologias Utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Angular 16 → Framework principal para construção da interface.
 
-## Code scaffolding
+TypeScript → Linguagem utilizada para desenvolvimento do projeto.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Bootstrap → Framework CSS para estilização e responsividade.
 
-## Build
+RxJS → Biblioteca para programação reativa e manipulação de streams de dados.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Angular CLI → Ferramenta para gerenciamento do projeto Angular.
 
-## Running unit tests
+Node.js & npm → Ambiente necessário para rodar o Angular e gerenciar pacotes.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+💻 Como Executar o Projeto
 
-## Running end-to-end tests
+📌 Pré-requisitos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Recomendados:
 
-## Further help
+Node.js (LTS) e npm
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Um editor de código (VS Code, WebStorm, etc.)
+
+Angular CLI instalado globalmente:
+
+  npm install -g @angular/cli
+
+Passos para execução
+
+1️⃣ Clone o projeto
+
+  git clone https://github.com/PedroNeves-git/controle-contatos-frontend.git
+
+2️⃣ Entre no diretório do projeto
+
+  cd controle-contatos-frontend
+
+3️⃣ Instale as dependências do projeto
+
+  npm install
+
+4️⃣ Inicie a aplicação
+
+  ng serve
+
+5️⃣ Acesse o sistema pelo navegador
+
+  http://localhost:4200
+
+📌 Configuração da API
+
+Para que o frontend funcione corretamente, a API em Spring Boot precisa estar rodando localmente na porta 8080.
+
+Endpoints da API:
+
+API Base URL: http://localhost:8080
+
+Endpoint principal: http://localhost:8080/api/pessoas
+
+Se necessário, edite a URL da API no arquivo:
+
+src/environments/environment.ts
+
+📌 Funcionalidades
+
+✔️ Listagem de contatos cadastrados.
+✔️ Cadastro de novos contatos.
+✔️ Edição de informações de um contato existente.
+✔️ Exclusão de contatos.
+✔️ Busca de endereços via CEP (integração com a API ViaCEP).
+
+Sinta-se à vontade para contribuir! 🚀
+
+👨‍💻 Desenvolvido por Pedro Neves
